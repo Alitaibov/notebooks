@@ -12,8 +12,10 @@ import java.util.List;
  */
 public interface StorageService
 {
-    void add(String personName, String phone);
-
+    void add(String personName, String phone, String age);
+    void delete(Integer id);
+    void update(Integer id, String personName, String phone, String age);
+    void select(Integer id);
     List<Person> list();
 
     Book defaultBook();

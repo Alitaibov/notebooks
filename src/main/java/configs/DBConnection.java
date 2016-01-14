@@ -12,8 +12,8 @@ package configs;
  */
 public enum DBConnection
 {
-    HIBERNATE   ("jdbc:postgresql://localhost/phonebook1",  "postgres", "123456"),
-    JDBC        ("jdbc:postgresql://localhost/phonebook",   "postgres", "123456");
+    HIBERNATE   ("jdbc:postgresql://localhost/PavelAndAli",  "postgres", "123456"),
+    JDBC        ("jdbc:postgresql://localhost/PavelAndAli",   "postgres", "123456");
 
 
     private DBConnection(String url, String username, String password)

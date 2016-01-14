@@ -1,6 +1,7 @@
 package commands;
 
 import controllers.ApplicationContext;
+import model.Age;
 import model.Person;
 import model.Phone;
 import services.StorageService;
@@ -38,7 +39,8 @@ public class CommandList extends AbstractCommand
         sb.append("Person: ").append(person.getName()).append("\n").append("phones: ");
         for (Phone phone : person.getPhones())
             sb.append(phone.getPhone()).append("\n");
-
+        Age age = person.getAge();
+        sb.append("Age: ").append(age.getAge()).append("\n");
         System.out.println(sb.toString());
     }
 

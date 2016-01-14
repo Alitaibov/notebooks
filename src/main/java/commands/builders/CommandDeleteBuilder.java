@@ -1,24 +1,22 @@
 package commands.builders;
 
 import com.google.inject.Inject;
+import commands.AbstractCommand;
 import commands.Command;
 import commands.CommandAdd;
-import commands.UnknownCommand;
+import commands.CommandDelete;
 import commands.factories.ConsoleCommandsFactory;
 import model.Params;
 import org.apache.commons.lang3.StringUtils;
 import services.StorageService;
 
 /**
-* User: rgordeev
-* Date: 25.06.14
-* Time: 17:21
-*/
-public class CommandAddBuilder extends AbstractCommandBuilder
+ * Created by Ololoev on 12.01.2016.
+ */
+public class CommandDeleteBuilder extends AbstractCommandBuilder
 {
-
     @Inject
-    public CommandAddBuilder(StorageService storageService)
+    public CommandDeleteBuilder(StorageService storageService)
     {
         super(storageService);
     }
@@ -31,12 +29,12 @@ public class CommandAddBuilder extends AbstractCommandBuilder
         if (StringUtils.isNotEmpty(params.getCommandArgs()))
             args = StringUtils.split(params.getCommandArgs());
 
-        if (args == null || args.length != 3)
+        if (args == null || args.length != 1)
             return ConsoleCommandsFactory.getInstance().createUnknownCommand(params);
 
-        Command add = new CommandAdd(args[0], args[1], args[2], getStorage());
+        Command delete = new CommandDelete(args[0], getStorage());
 
-        return add;
+        return delete;
 
     }
 }

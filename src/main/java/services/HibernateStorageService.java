@@ -24,7 +24,7 @@ public class HibernateStorageService implements StorageService
     }
 
     @Override
-    public void add(String personName, String phone)
+    public void add(String personName, String phone, String age)
     {
         Book   book   = defaultBook();
         Person person = new Person(personName);
@@ -40,6 +40,24 @@ public class HibernateStorageService implements StorageService
 
         manager.getTransaction().commit();
 
+    }
+
+    @Override
+    public void update(Integer id, String personName, String phone, String age)
+    {
+        //
+    }
+
+    @Override
+    public void delete(Integer id)
+    {
+        //
+    }
+
+    @Override
+    public void select(Integer id)
+    {
+        //
     }
 
     @Override

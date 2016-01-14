@@ -1,3 +1,4 @@
+import model.Age;
 import model.Person;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -12,8 +13,8 @@ public class PersonTest {
     @Test
     public void equalsTest()
     {
-        Person p1 = new Person("Ivanov", new HashSet());
-        Person p2 = new Person("Ivanov", new HashSet());
+        Person p1 = new Person("Ivanov", new HashSet(), new Age());
+        Person p2 = new Person("Ivanov", new HashSet(), new Age());
 
         assertEquals("Equals Persons", p1, p2);
     }

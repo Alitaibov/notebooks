@@ -19,11 +19,13 @@ public class Person
     {
         this.name = name;
         this.phones = new HashSet<>();
+        this.age = new Age();
     }
 
-    public Person(String name, Set<Phone> phones) {
+    public Person(String name, Set<Phone> phones, Age age) {
         this.name = name;
         this.phones = phones;
+        this.age = age;
     }
 
     @Column(name = "name")
@@ -34,6 +36,11 @@ public class Person
     @OneToMany(mappedBy = "person")
     public Set<Phone> getPhones() {
         return phones;
+    }
+
+    @OneToMany(mappedBy = "person")
+    public Age getAge() {
+        return age;
     }
 
     @Override
@@ -68,9 +75,14 @@ public class Person
         this.phones = phones;
     }
 
+    public void setAge(Age age) {
+        this.age = age;
+    }
+
     private Long id;
     private String name;
     private Set<Phone> phones;
+    private Age age;
     //private String lastname;
 
 }
