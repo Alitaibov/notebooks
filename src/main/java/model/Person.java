@@ -38,7 +38,7 @@ public class Person
         return phones;
     }
 
-    @OneToMany(mappedBy = "person")
+    @OneToOne(mappedBy = "person")
     public Age getAge() {
         return age;
     }
